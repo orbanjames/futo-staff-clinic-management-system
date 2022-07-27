@@ -23,3 +23,37 @@ void gotoxy(short x,short y)
     COORD pos ={x ,y}; // sets co-ordinates in (x,y)....
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),pos);
 }
+
+// List of Globle Variable...
+
+struct patient
+{
+    int age;
+    char Gender;
+    char First_Name[20];
+    char Last_Name[20];
+    char Address[30];
+    char Contact_no[15];
+    char Email[30];
+    char Staff_Id[20];
+    char Doctor[20];
+    char Problem[20];
+};
+struct patient p,temp_c;
+void main(void)
+{
+    WelcomeScreen();
+    Title();
+    LoginScreen();
+}
+// Welcome Screen...
+void WelcomeScreen(void)
+{
+    printf("\n\n\n\n\n\t\t\t\t#########################################");
+    printf("\n\t\t\t\t#              WELCOME TO         \t#");
+    printf("\n\t\t\t\t#      FUTO STAFF CLINIC MANAGEMENT SYSTEM  \t#");
+    printf("\n\t\t\t\t#########################################");
+    printf("\n\n\n\n\n Press any Key.......\n");
+    getch();
+    system("cls"); // used to clear screen...  or use clsscr();
+}
