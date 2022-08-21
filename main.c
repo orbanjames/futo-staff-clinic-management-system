@@ -295,4 +295,15 @@ void Add_rec(void)
             }
         }
     }while(!valid);
+
+// Email..
+    do
+    {
+        printf("\n\t\t\t Email : ");
+        scanf("%s",p.Email);
+        if(strlen(p.Email)>30 || strlen(p.Email)<8)
+        {
+            printf("\n\t Invalid :( \t The max range for email is 30 and min range is 8 : )");
+        }
+    }while(strlen(p.Email)>30 || strlen(p.Email)<8);
   
