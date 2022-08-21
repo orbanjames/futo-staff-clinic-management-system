@@ -391,4 +391,70 @@ void Add_rec(void)
         goto sd;
     }
 }
+
+// VIEW RECORD
+void func_list()
+{
+    int row;
+    system("cls");
+    Title();
+    FILE *ek;
+    ek = fopen("Record2.dat","r");
+    printf("\n\n\t\t\t!!!!!!!!!! List Patients Record !!!!!!!!!!!!!!!!!!\n");
+    gotoxy(1,15);
+    printf("Full Name");
+    gotoxy(20,15);
+    printf("Gender");
+    gotoxy(32,15);
+    printf("Age");
+    gotoxy(37,15);
+    printf("Address");
+    gotoxy(49,15);
+    printf("Contact Nu.");
+    gotoxy(64,15);
+    printf("Email");
+    gotoxy(88,15);
+    printf("Problem");
+    gotoxy(98,15);
+    printf("Perscribed Doctor \n");
+    printf("==============================================================================================\n");
+    row = 17;
+    while(fscanf(ek,"%s %s %c %i %s %s %s %s %s",p.First_Name,p.Last_Name,&p.Gender,&p.age, p.Address,p.Contact_no, p.Email,p.Problem, p.Doctor)!= EOF)
+    {
+        gotoxy(1,row);
+        printf("%s %s",p.First_Name, p.Last_Name);
+        gotoxy(20,row);
+        printf("%c",p.Gender);
+        gotoxy(32,row);
+        printf("%i",p.age);
+        gotoxy(37,row);
+        printf("%s",p.Address);
+        gotoxy(49,row);
+        printf("%s",p.Contact_no);
+        gotoxy(64,row);
+        printf("%s",p.Email);
+        gotoxy(88,row);
+        printf("%s",p.Problem);
+        gotoxy(98,row);
+        printf("%s",p.Doctor);
+        row++;
+    }
+    fclose(ek);
+    getch();
+    MainMenu();
+}
+void Search_rec(void)
+{
+    char name[20];
+    system("cls");
+    Title();
+    FILE *ek;
+    ek = fopen("Record2.dat","r");
+    printf("\n\n\t\t\t !!!!!!!!!!!!!! Search Patients Record !!!!!!!!!!!\n");
+    gotoxy(12,8);
+    printf("\n Enter Patient Name to be viewed : ");
+    scanf("%s",name);
+    fflush(stdin);    
+    name[0]=toupper(name[0]);
+    while(fscanf(ek,"%s %s %c %i %s %s %s %s %s\n",p.First_Name,p.Last_Name, &p.Gender, &p.age, p.Address,p.Contact_no,p.Email, p.Problem, p.Doctor)!= EOF)
   
