@@ -262,4 +262,37 @@ void Add_rec(void)
             goto C;
         }
     }while(!valid);
+
+// Contact No.
+    do
+    {
+        D:
+        printf("\n\t\t\t Contact no : ");
+        scanf("%s",p.Contact_no);
+        if(strlen(p.Contact_no)>10 || strlen(p.Contact_no)>=10)
+        {
+            printf("\n\t Sorry : (Invalid. Contact no. must contain 10 numbers. Enter Again..!!	 :");
+            goto D;
+        }
+        else
+        {
+            for(b=0;b<strlen(p.Contact_no);b++)
+            {
+                if(!isalpha(p.Contact_no[b]))
+                {
+                    valid = 1;
+                }
+                else
+                {
+                    valid = 0;
+                    break;
+                }
+            }
+            if(!valid)
+            {
+                printf("\n\t\t Contact no. contain Invalid character : ( Enter again : )");
+                goto D;
+            }
+        }
+    }while(!valid);
   
