@@ -57,3 +57,11 @@ void WelcomeScreen(void)
     getch();
     system("cls"); // used to clear screen...  or use clsscr();
 }
+
+// Title screen..
+void Title(void)
+{
+    printf("\n\n\t\t------------------------------------------------------------------------");
+    printf("\n\t\t\t\t         FUTO STAFF CLINIC           ");
+    printf("\n\t\t------------------------------------------------------------------------");
+}
