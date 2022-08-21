@@ -306,4 +306,35 @@ void Add_rec(void)
             printf("\n\t Invalid :( \t The max range for email is 30 and min range is 8 : )");
         }
     }while(strlen(p.Email)>30 || strlen(p.Email)<8);
+
+// Problem..
+    E:
+    printf("\n\t\t\t Problem : ");
+    scanf("%s",p.Problem);
+    p.Problem[0]=toupper(p.Problem[0]);
+    if(strlen(p.Problem)>15 || strlen(p.Problem)<3)
+    {
+        printf("\n\t Invalid : ( \t The max range for first name is 15 and min range is 3):");
+        goto E;
+    }
+    else
+    {
+        for(b=0;b<strlen(p.Problem);b++)
+        {
+            if(isalpha(p.Problem[b]))
+            {
+                valid = 1;
+            }
+            else
+            {
+                valid = 0;
+                break;
+            }
+        }
+        if(!valid)
+        {
+            printf("\n\t\t Problem contain Invalid character : (enter again :)");
+            goto E;
+        }
+    }
   
