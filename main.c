@@ -113,3 +113,15 @@ void ex_it(void)
     printf("\n\n\n\n\n\t\tThank You For Visiting...!");
     getch();
 }
+
+// log_in...
+void LoginScreen(void)
+{
+
+    int e=0;
+    char Username[15];
+    char Password[15];
+    char original_Username[25]="Govind";
+    char original_Password[15]="252325";
+
+    
