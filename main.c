@@ -643,4 +643,21 @@ void Dlt_rec()
             printf("%s %s %c %i %s %s %s %s %s\n",p.First_Name,p.Last_Name,p.age,p.Address,p.Contact_no,p.Email,p.Problem,p.Doctor);
             found = 1;
         }
-  
+  }// while Loop Ends..
+    if(found==0)
+    {
+        printf("\n\n\t\t\t Record not found.....");
+        getch();
+        MainMenu();
+    }
+    else
+    {
+        fclose(ek);
+        fclose(ft);
+        remove("Record2.dat");
+        rename("temp_file2.dat","Record2.dat");
+        printf("\n\n\t\t\t Record deleted successfully :) ");
+        getch();
+        MainMenu();
+    }
+}
