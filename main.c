@@ -164,7 +164,7 @@ void Add_rec(void)
     FILE *ek; // file pointer
     ek=fopen("Record2.dat","a"); //open file in write mode..
     printf("\n\n\t\t\t!!!!!!!!!!!!!!!!  Add Patients Record  !!!!!!!!!!!!!!!!!!\n");
-    
+
 // FIRST NAME..
     A:
     printf("\n\t\t\t First Name : ");
@@ -226,4 +226,23 @@ void Add_rec(void)
             goto B;
         }
     }
+
+// Gender
+    do
+    {
+        printf("\n\t\t\t Gender[F/M] : ");
+        scanf("%s",&p.Gender);
+        if(toupper(p.Gender)=='M' || toupper(p.Gender)=='F')
+        {
+            ok = 1;
+        }
+        else
+        {
+            ok = 0;
+        }
+        if(!ok)
+        {
+            printf("\n\t\t Gender contain Invalid character : (  Enter either F or M :)");
+        }
+    }while(!ok);
   
