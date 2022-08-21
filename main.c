@@ -164,6 +164,7 @@ void Add_rec(void)
     FILE *ek; // file pointer
     ek=fopen("Record2.dat","a"); //open file in write mode..
     printf("\n\n\t\t\t!!!!!!!!!!!!!!!!  Add Patients Record  !!!!!!!!!!!!!!!!!!\n");
+    
 // FIRST NAME..
     A:
     printf("\n\t\t\t First Name : ");
@@ -192,6 +193,37 @@ void Add_rec(void)
         {
             printf("\n\t\t First name contain Invalid Character :(Enter Again :)");
             goto A;
+        }
+    }
+
+//  LAST NAME.....
+    B:
+    printf("\n\t\t\t Last Name  : ");
+    scanf("%s",p.Last_Name);
+    p.Last_Name[0] = toupper(p.Last_Name[0]);
+    if(strlen(p.Last_Name)>20 || strlen(p.Last_Name)<2)
+    {
+        printf("\n\t Invalid :(\t The max rangge for last name is 20 and min range is 2 :");
+        goto B;
+    }
+    else
+    {
+        for(b=0;b<strlen(p.Last_Name);b++)
+        {
+            if(isalpha(p.Last_Name[b]))
+            {
+                valid=1;
+            }
+            else
+            {
+                valid = 0;
+                break;
+            }
+        }
+        if(!valid)
+        {
+            printf("\n\t\t Last name contain Invalid Character : ( Enter again :)");
+            goto B;
         }
     }
   
