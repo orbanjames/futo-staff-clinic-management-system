@@ -595,4 +595,27 @@ void Edit_rec(void)
             p.Doctor[0] = toupper(p.Doctor[0]);
             printf("'n Press U character for the Updating Operation :");
             ch = getche();
+            // Function..
+            if(ch=='u' || ch== 'U')
+            {
+                fprintf(ft,"%s %s %c %i %s %s %s %s %s\n",p.First_Name,p.Last_Name,p.Gender,p.age,p.Address,p.Contact_no,p.Email,p.Problem,p.Doctor);
+                printf("\n\n\t\t\t\tPatient record updated successfully ...");
+            }
+        }
+        else
+        {
+            fprintf(ft,"%s %s %c %i %s %s %s %s %s\n",p.First_Name,p.Last_Name,p.age,p.Address,p.Contact_no,p.Email,p.Problem,p.Doctor);
+        }
+    }
+    if(!valid)
+    {
+        printf("\n\t\t No Record Found...!");
+    }
+    fclose(ft);
+    fclose(ek);
+    remove("Record2.dat");
+    rename("temp2.dat","Record2.dat");
+    getch();
+    MainMenu();
+}
   
