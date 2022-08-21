@@ -164,3 +164,34 @@ void Add_rec(void)
     FILE *ek; // file pointer
     ek=fopen("Record2.dat","a"); //open file in write mode..
     printf("\n\n\t\t\t!!!!!!!!!!!!!!!!  Add Patients Record  !!!!!!!!!!!!!!!!!!\n");
+// FIRST NAME..
+    A:
+    printf("\n\t\t\t First Name : ");
+    scanf("%s",p.First_Name);
+    p.First_Name[0]=toupper(p.First_Name[0]);  // First word change to UPPERCASE..
+    if(strlen(p.First_Name)>20 || strlen(p.First_Name)<2)
+    {
+        printf("\n\t Invalid :( \t The max range for first name is 20 and min range is 2 :)");
+        goto A;
+    }
+    else
+    {
+        for(b=0;b<strlen(p.First_Name);b++)
+        {
+            if(isalpha(p.First_Name[b]))
+            {
+                valid = 1;
+            }
+            else
+            {
+                valid = 0;
+                break;
+            }
+        }
+        if(!valid)
+        {
+            printf("\n\t\t First name contain Invalid Character :(Enter Again :)");
+            goto A;
+        }
+    }
+  
