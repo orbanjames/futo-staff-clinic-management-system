@@ -65,3 +65,43 @@ void Title(void)
     printf("\n\t\t\t\t         FUTO STAFF CLINIC           ");
     printf("\n\t\t------------------------------------------------------------------------");
 }
+
+// Function definition of Main Menu..
+void MainMenu(void)
+{
+    system("cls");
+    int choose;
+    Title();
+    printf("\n\n\n\n\n\t\t\t\t1. Add Patients Record.\n");
+    printf("\n\t\t\t\t2. List Patients Record.\n");
+    printf("\n\t\t\t\t3. Search Patients Record.\n");
+    printf("\n\t\t\t\t4. Edit Patients Record.\n");
+    printf("\n\t\t\t\t5. Delete Patients Record.\n");
+    printf("\n\t\t\t\t6. Exit. \n");
+    printf("\n\n\n\n\t\t\t\tChoose from 1 to 6: ");
+    scanf("%i",&choose);
+    switch(choose)
+    {
+        case 1:
+        Add_rec();
+        break;
+        case 2:
+        func_list();
+        break;
+        case 3:
+        Search_rec();
+        break;
+        case 4:
+        Edit_rec();
+        break;
+        case 5:
+        Dlt_rec();
+        break;
+        case 6:
+        ex_it();
+        break;
+        default:
+        printf("\t\t\tInvalid Entry, Please enter right Choice..!");
+        getch();
+    }
+}
