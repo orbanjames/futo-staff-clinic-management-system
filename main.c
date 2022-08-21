@@ -245,4 +245,21 @@ void Add_rec(void)
             printf("\n\t\t Gender contain Invalid character : (  Enter either F or M :)");
         }
     }while(!ok);
+
+// Age
+    printf("\n\t\t\t Age : ");
+    scanf("%i",&p.age);
+    // Address..
+    do
+    {
+        C:
+        printf("\n\t\t\t Address : ");
+        scanf("%s",p.Address);
+        p.Address[0]=toupper(p.Address[0]);
+        if(strlen(p.Address)>20 || strlen(p.Address)<4)
+        {
+            printf("\n\t Inavalid :( \t The max range for address is 20 and min range is 3. ");
+            goto C;
+        }
+    }while(!valid);
   
