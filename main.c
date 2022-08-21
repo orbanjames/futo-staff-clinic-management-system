@@ -146,3 +146,10 @@ void LoginScreen(void)
         }
     }while(e<=2);
     if(e>2)
+    {
+        printf("You have cross the limit . You cannot Login.  :):)");
+        getch();
+        ex_it();
+    }
+    system("cls");
+}
