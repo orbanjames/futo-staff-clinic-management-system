@@ -554,4 +554,45 @@ void Edit_rec(void)
         MainMenu();
     }
     while(fscanf(ek,"%s %s %c %i %s %s %s %s %s\n",p.First_Name,p.Last_Name, &p.Gender, &p.age, p.Address, p.Contact_no,p.Email,p.Problem,p.Doctor)!= EOF);
+    {
+        if(strcmp(p.First_Name,name)==0)
+        {
+            valid=1;
+            gotoxy(25,17);
+            printf("**** Existing Record ****");
+            gotoxy(10,19);
+            printf("%s \t%s \t%c \t %i \t%s \t%s \t%s \t%s \t%s\n",p.First_Name,p.Last_Name,p.Gender, p.age, p.Address, p.Contact_no,p.Email,p.Problem,p.Doctor);
+            gotoxy(12,22);
+            printf("Enter new First Name :");
+            scanf("%s",p.First_Name);
+            gotoxy(12,24);
+            printf("Enter Last Name");
+            scanf("%s",p.Last_Name);
+            gotoxy(12,26);
+            printf("Enter Gender :");
+            scanf("%c",p.Gender);
+            p.Gender = toupper(p.Gender);
+            gotoxy(12,28);
+            printf("Enter age :");
+            scanf("%i",p.age);
+            gotoxy(12,30);
+            printf("Enter Address :");
+            scanf("%s",p.Address);
+            p.Address[0] = toupper(p.Address[0]);
+            gotoxy(12,32);
+            printf("Enter Contact No. ");
+            scanf("%s",p.Contact_no);
+            gotoxy(12,34);
+            printf("Enter New Email :");
+            scanf("%s",p.Email);
+            gotoxy(12,36);
+            printf("Enter Problem :");
+            scanf("%c",p.Problem);
+            p.Problem[0] = toupper(p.Problem[0]);
+            gotoxy(12,38);
+            printf("Enter Doctor :");
+            scanf("%s",p.Doctor);
+            p.Doctor[0] = toupper(p.Doctor[0]);
+            printf("'n Press U character for the Updating Operation :");
+            ch = getche();
   
