@@ -124,4 +124,16 @@ void LoginScreen(void)
     char original_Username[25]="Govind";
     char original_Password[15]="252325";
 
-    
+    do
+    {
+        printf("\n\n\n\n\t\t\t\t\tEnter Username & Password : ");
+        printf("\n\n\n\t\t\t\t\tUsername : ");
+        scanf("%s",&Username);
+        printf("\n\n\t\t\t\t\tPassword : ");
+        scanf("%s",&Password);
+        if(strcmp(Username,original_Username)==0 && strcmp(Password,original_Password)==0)
+        {
+            printf("\n\n\n\t\t\t\t.......Login Successfull....!!");
+            getch();  // Used to hold screen..
+            MainMenu();
+            break;
