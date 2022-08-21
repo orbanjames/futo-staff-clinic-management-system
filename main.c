@@ -618,4 +618,29 @@ void Edit_rec(void)
     getch();
     MainMenu();
 }
+
+void Dlt_rec()
+{
+    char name[20];
+    int found=0;
+    system("cls");
+    Title();
+    FILE *ek, *ft;
+    ft = fopen("temp_file2.dat","w+");
+    ek = fopen("Record2.dat","r");
+    printf("\n\n\t\t\t!!!!!!!!!!!!!!!Delete Patients Record !!!!!!!!!!!!!\n ");
+    gotoxy(12,8);
+    printf("\n Enter Patient Name to Delete: ");
+    fflush(stdin);
+    gets(name);
+    name[0] = toupper(name[0]);
+    while(fscanf(ek,"%s %s %c %i %s %s %s %s %s",p.First_Name,p.Last_Name,&p.Gender, &p.age, p.Address, p.Contact_no,p.Email,p.Problem,p.Doctor) != EOF);
+    {
+        if(strcmp(p.First_Name,name)!=0)
+        fprintf(ft,"%s %s %c %i %s %s %s %s %s\n",p.First_Name,p.Last_Name,p.age,p.Address,p.Contact_no,p.Email,p.Problem,p.Doctor);
+        else
+        {
+            printf("%s %s %c %i %s %s %s %s %s\n",p.First_Name,p.Last_Name,p.age,p.Address,p.Contact_no,p.Email,p.Problem,p.Doctor);
+            found = 1;
+        }
   
