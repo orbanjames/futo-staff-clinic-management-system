@@ -337,4 +337,58 @@ void Add_rec(void)
             goto E;
         }
     }
+
+// PRESCRIBED DOCTOR..
+    F:
+    printf("\n\t\t\t Prescribed Doctor : ");
+    scanf("%s",p.Doctor);
+    p.Doctor[0]=toupper(p.Doctor[0]);
+    if(strlen(p.Doctor)>30 || strlen(p.Doctor)<3)
+    {
+        printf("\n\t Invalid :( \t The max range for first name is 30 and min range is 3:)");
+        goto F;
+    }
+    else
+    {
+        for(b=0;b<strlen(p.Doctor);b++)
+        {
+            if(isalpha(p.Doctor[b]))
+            {
+                valid = 1;
+            }
+            else
+            {
+                valid = 0;
+                break;
+            }
+        }
+        if(!valid)
+        {
+            printf("\n\t\t Doctor name contain Invalid character : (Enter Again :)");
+            goto F;
+        }
+    }
+    fprintf(ek," %s %s %c %i %s %s %s %s %s\n", p.First_Name , p.Last_Name , p.Gender , p.age , p.Address , p.Contact_no , p.Email , p.Problem , p.Doctor);
+    printf("\n\n\t\t\t.....Information Record Successfull...");
+    fclose(ek); // ek file is closed..
+    sd:
+    getch();
+    printf("\n\n\t\t\t Do you want to add more[Y/N] ?? ");
+    scanf("%c",&ans);
+    if(toupper(ans)=='Y')
+    {
+        Add_rec();
+    }
+    else if(toupper(ans)=='N')
+    {
+        printf("\n\t\t Thankyou :) ");
+        getch();
+        MainMenu();
+    }
+    else
+    {
+        printf("\n\t\t Invalid Input \n");
+        goto sd;
+    }
+}
   
