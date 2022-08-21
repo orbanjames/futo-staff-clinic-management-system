@@ -153,3 +153,14 @@ void LoginScreen(void)
     }
     system("cls");
 }
+
+//  ADD RECORD
+void Add_rec(void)
+{
+    system("cls");
+    Title();
+    //List OF Variables..
+    char ans;
+    FILE *ek; // file pointer
+    ek=fopen("Record2.dat","a"); //open file in write mode..
+    printf("\n\n\t\t\t!!!!!!!!!!!!!!!!  Add Patients Record  !!!!!!!!!!!!!!!!!!\n");
