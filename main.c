@@ -105,3 +105,11 @@ void MainMenu(void)
         getch();
     }
 }
+
+void ex_it(void)
+{
+    system("cls");
+    Title();
+    printf("\n\n\n\n\n\t\tThank You For Visiting...!");
+    getch();
+}
