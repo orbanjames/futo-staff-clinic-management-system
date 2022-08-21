@@ -137,3 +137,12 @@ void LoginScreen(void)
             getch();  // Used to hold screen..
             MainMenu();
             break;
+        }
+        else
+        {
+            printf("\n\t\t\tPassword is incorrect..: (Try Again..");
+            e++;
+            getch();
+        }
+    }while(e<=2);
+    if(e>2)
