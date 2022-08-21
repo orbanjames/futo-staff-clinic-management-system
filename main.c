@@ -457,4 +457,101 @@ void Search_rec(void)
     fflush(stdin);    
     name[0]=toupper(name[0]);
     while(fscanf(ek,"%s %s %c %i %s %s %s %s %s\n",p.First_Name,p.Last_Name, &p.Gender, &p.age, p.Address,p.Contact_no,p.Email, p.Problem, p.Doctor)!= EOF)
+    {
+        if(strcmp(p.First_Name,p.First_Name)==0)
+        {
+            gotoxy(1,15);
+            printf("Full Name");
+            gotoxy(25,15);
+            printf("Gender");
+            gotoxy(32,15);
+            printf("Age");
+            gotoxy(37,15);
+            printf("Address");
+            gotoxy(52,15);
+            printf("Contact No.");
+            gotoxy(64,15);
+            printf("Email");
+            gotoxy(80,15);
+            printf("Problem");
+            gotoxy(95,15);
+            printf("Perscribed Doctor\n");
+            printf("=======================================================================================\n");
+            gotoxy(1,18);
+            printf("%s %s",p.First_Name,p.Last_Name);
+            gotoxy(25,18);
+            printf("%c",p.Gender);
+            gotoxy(32,18);
+            printf("%c",p.age);
+            gotoxy(37,18);
+            printf("%s",p.Address);
+            gotoxy(52,18);
+            printf("%s",p.Contact_no);
+            gotoxy(64,18);
+            printf("%s",p.Email);
+            gotoxy(80,18);
+            printf("%s",p.Problem);
+            gotoxy(95,18);
+            printf("%s",p.Doctor);
+            printf("\n");
+            break;
+        }
+    }
+    if(strcmp(p.First_Name,name)!=0)
+    {
+        gotoxy(5,10);
+        printf("Record not found..!");
+        getch();
+    }
+    fclose(ek);
+    L:
+    getch();
+    printf("\n\n\t\t\tDo You want to view more[y/n] ?? ");
+    scanf("%c",&ans);
+    if(toupper(ans)=='Y')
+    {
+        Search_rec();
+    }
+    else if(toupper(ans)=='N')
+    {
+        printf("\n\t\t Thankyou :");
+        getch();
+        MainMenu();
+    }
+    else
+    {
+        printf("\n\t Invalid Input. \n");
+        goto L;
+    }
+}
+void Edit_rec(void)
+{
+    FILE *ek , *ft;
+    int i,b,valid = 0;
+    char ch;
+    char name[20];
+    system("cls");
+    Title();
+    ft=fopen("temp2.dat","w+");
+    ek=fopen("Record2.dat","r");
+    if(ek==NULL)
+    {
+        printf("\n\t Can not open file..!!");
+        getch();
+        MainMenu();
+    }
+    printf("\n\n\t\t\t!!!!!!!!!! Edit Patients Record !!!!!!!!!!!!!\n");
+    gotoxy(12,13);
+    printf("Enter the First Name of the Patient :");
+    scanf("%s",&name);
+    fflush(stdin);
+    name[0]=toupper(name[0]);
+    gotoxy(12,15);
+    if(ft==NULL)
+    {
+        printf("\n Can Not open File ..!");
+        getch();
+        MainMenu();
+    }
+    while(fscanf(ek,"%s %s %c %i %s %s %s %s %s\n",p.First_Name,p.Last_Name, &p.Gender, &p.age, p.Address, p.Contact_no,p.Email,p.Problem,p.Doctor)!= EOF);
   
