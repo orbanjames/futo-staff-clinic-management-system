@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1661135503 source:c:\users\jamesorban\desktop\c-files\futo-staff-clinic-management-system\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<conio.h>
+	<ctype.h>
+	<string.h>
+

@@ -49,9 +49,9 @@ void main(void)
 // Welcome Screen...
 void WelcomeScreen(void)
 {
-    printf("\n\n\n\n\n\t\t\t\t#########################################");
-    printf("\n\t\t\t\t#              WELCOME TO         \t#");
-    printf("\n\t\t\t\t#      FUTO STAFF CLINIC MANAGEMENT SYSTEM  \t#");
+    printf("\n\n\n\n\n\n\n\n\t\t\t\t#########################################");
+    printf("\n\t\t\t\t#              WELCOME TO             \t#");
+    printf("\n\t\t\t\t# FUTO STAFF CLINIC MANAGEMENT SYSTEM \t#");
     printf("\n\t\t\t\t#########################################");
     printf("\n\n\n\n\n Press any Key.......\n");
     getch();
@@ -62,7 +62,7 @@ void WelcomeScreen(void)
 void Title(void)
 {
     printf("\n\n\t\t------------------------------------------------------------------------");
-    printf("\n\t\t\t\t         FUTO STAFF CLINIC           ");
+    printf("\n\t\t\t\t             FUTO STAFF CLINIC                                       ");
     printf("\n\t\t------------------------------------------------------------------------");
 }
 
@@ -121,8 +121,8 @@ void LoginScreen(void)
     int e=0;
     char Username[15];
     char Password[15];
-    char original_Username[25]="Govind";
-    char original_Password[15]="252325";
+    char original_Username[25]="JamesOrban";
+    char original_Password[15]="123456";
 
     do
     {
@@ -203,7 +203,7 @@ void Add_rec(void)
     p.Last_Name[0] = toupper(p.Last_Name[0]);
     if(strlen(p.Last_Name)>20 || strlen(p.Last_Name)<2)
     {
-        printf("\n\t Invalid :(\t The max rangge for last name is 20 and min range is 2 :");
+        printf("\n\t Invalid :(\t The max range for last name is 20 and min range is 2 :");
         goto B;
     }
     else
@@ -261,6 +261,7 @@ void Add_rec(void)
             printf("\n\t Inavalid :( \t The max range for address is 20 and min range is 3. ");
             goto C;
         }
+
     }while(!valid);
 
 // Contact No.
@@ -269,7 +270,7 @@ void Add_rec(void)
         D:
         printf("\n\t\t\t Contact no : ");
         scanf("%s",p.Contact_no);
-        if(strlen(p.Contact_no)>10 || strlen(p.Contact_no)>=10)
+        if(strlen(p.Contact_no)>10 || strlen(p.Contact_no)!=10)
         {
             printf("\n\t Sorry : (Invalid. Contact no. must contain 10 numbers. Enter Again..!!	 :");
             goto D;
@@ -307,21 +308,21 @@ void Add_rec(void)
         }
     }while(strlen(p.Email)>30 || strlen(p.Email)<8);
 
-// Problem..
-    E:
-    printf("\n\t\t\t Problem : ");
-    scanf("%s",p.Problem);
-    p.Problem[0]=toupper(p.Problem[0]);
-    if(strlen(p.Problem)>15 || strlen(p.Problem)<3)
+// Problem ====================================================================================
+E:
+    printf("\n\t\t\tProblem: ");
+    scanf("%s", p.Problem);
+    p.Problem[0] = toupper(p.Problem[0]);
+    if (strlen(p.Problem) > 15 || strlen(p.Problem) < 3)
     {
-        printf("\n\t Invalid : ( \t The max range for first name is 15 and min range is 3):");
+        printf("\n\tInvalid :( \t please enter problem in between 3 to 15 character");
         goto E;
     }
     else
     {
-        for(b=0;b<strlen(p.Problem);b++)
+        for (b = 0; b < strlen(p.Problem); b++)
         {
-            if(isalpha(p.Problem[b]))
+            if (isalpha(p.Problem[b]))
             {
                 valid = 1;
             }
@@ -331,28 +332,28 @@ void Add_rec(void)
                 break;
             }
         }
-        if(!valid)
+        if (!valid)
         {
-            printf("\n\t\t Problem contain Invalid character : (enter again :)");
+            printf("\n\t\t Problem contain invalid charaters. Enter a valid problem : Please try again");
             goto E;
         }
     }
 
-// PRESCRIBED DOCTOR..
-    F:
-    printf("\n\t\t\t Prescribed Doctor : ");
-    scanf("%s",p.Doctor);
-    p.Doctor[0]=toupper(p.Doctor[0]);
-    if(strlen(p.Doctor)>30 || strlen(p.Doctor)<3)
+// Prescribed docters =============================================================
+F:
+    printf("\n\t\t\tPrescribed Doctor: ");
+    scanf("%s", p.Doctor);
+    p.Doctor[0] = toupper(p.Doctor[0]);
+    if (strlen(p.Doctor) > 15 || strlen(p.Doctor) < 3)
     {
-        printf("\n\t Invalid :( \t The max range for first name is 30 and min range is 3:)");
+        printf("\n\tInvalid :( \t please enter Doctor in between 3 to 30 character");
         goto F;
     }
     else
     {
-        for(b=0;b<strlen(p.Doctor);b++)
+        for (b = 0; b < strlen(p.Doctor); b++)
         {
-            if(isalpha(p.Doctor[b]))
+            if (isalpha(p.Doctor[b]))
             {
                 valid = 1;
             }
@@ -362,9 +363,9 @@ void Add_rec(void)
                 break;
             }
         }
-        if(!valid)
+        if (!valid)
         {
-            printf("\n\t\t Doctor name contain Invalid character : (Enter Again :)");
+            printf("\n\t\t Prescribed Doctor contain invalid charaters. Enter a valid Name : Please try again");
             goto F;
         }
     }
@@ -454,7 +455,7 @@ void Search_rec(void)
     gotoxy(12,8);
     printf("\n Enter Patient Name to be viewed : ");
     scanf("%s",name);
-    fflush(stdin);    
+    fflush(stdin);
     name[0]=toupper(name[0]);
     while(fscanf(ek,"%s %s %c %i %s %s %s %s %s\n",p.First_Name,p.Last_Name, &p.Gender, &p.age, p.Address,p.Contact_no,p.Email, p.Problem, p.Doctor)!= EOF)
     {
@@ -514,7 +515,7 @@ void Search_rec(void)
     }
     else if(toupper(ans)=='N')
     {
-        printf("\n\t\t Thankyou :");
+        printf("\n\t\t Thank you :");
         getch();
         MainMenu();
     }
